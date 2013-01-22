@@ -13,13 +13,7 @@ module.exports = function (parentEl) {
   
   dom.el = [domEl]
 
-  dom.render = function (e) {
-    var pos = v(e.mesh.pos).sub(e.offset)
-    css(e.el, {
-      left: Math.round(pos.left)
-    , top: Math.round(pos.top)
-    })
-  }
+  // listeners
 
   dom.init = function (e) {
     if (e.id) e.el.attributes.id = e.id
@@ -33,6 +27,10 @@ module.exports = function (parentEl) {
 
   dom.start = function (e) {
     parentEl.appendChild(e.el)
+  }
+
+  dom.render = function (e) {
+    e.moveTo(v(e.mesh.pos).sub(e.offset))
   }
 
   dom.stop = function (e) {
