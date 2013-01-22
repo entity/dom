@@ -39,5 +39,26 @@ module.exports = function (parentEl) {
     parentEl.removeChild(e.el)
   }
 
+  // methods
+
+  dom.moveTo = function (pos) {
+    css(this.el, {
+      left: Math.round(pos.left)
+    , top: Math.round(pos.top)
+    })
+  }
+
+  dom.resize = function (size) {
+    css(this.el, {
+      width: size.width
+    , height: size.height
+    })
+  }
+
+  dom.setClass = function (className) {
+    this.el.className = 'entity entity-dom'
+    if (className) this.el.classList.add(className)
+  }
+
   return dom
 }
