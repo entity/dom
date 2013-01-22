@@ -17,12 +17,14 @@ module.exports = function (parentEl) {
 
   dom.init = function (e) {
     if (e.id) e.el.attributes.id = e.id
-    if (e.class) e.el.classList.add(e.class)
-    var size = e.mesh.size
-    css(e.el, {
-      width: size.width
-    , height: size.height
-    })
+    if (e.class) e.setClass(e.class)
+    if (e.classList) {
+      e.setClass()
+      e.classList.forEach(function (c) {
+        e.el.classList.add(c)
+      })
+    }
+    e.resize(e.mesh.size)
   }
 
   dom.start = function (e) {
