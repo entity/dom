@@ -2,9 +2,8 @@
   "name": "dom",
   "description": "dom render component system",
   "version": "0.0.1",
-  "keywords": ["game", "dom", "render", "component", "system"],  
+  "keywords": ["game","dom","render","component","system"],
   "dependencies": {
-    "component/domify": "*",
     "component/css": "*",
     "entity/vector": "*",
     "entity/rect": "*"
