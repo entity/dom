@@ -1,12 +1,11 @@
 
-var domify = require('domify')
 var css = require('css')
 var rect = require('rect')
 var v = require('vector')
 
 var domEl = function (el) {
   if (el) return el
-  else return domify('<div class="entity entity-dom"></div>')[0]
+  else return document.createElement('div')
 }
 
 module.exports = function (parentEl) {
